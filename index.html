@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revelación de Género - [Nombres Padres]</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+</head>
+
+<body>
+    <div class="moving-image">
+        <img src="img/avioneta.png" alt="Imagen en Movimiento" class="responsive-image" width="150" height="auto">
+    </div>
+    <header class="hero">
+        <h1 data-aos="fade-down" class="dress-code-text">¡DESCUBRAMOS EL GÉNERO DE NUESTRO BEBE! </h1>
+        <div class="dress-code-text">
+            <p>Damos gracias a Dios por este regalo,<br>
+                una vida crece dentro de mamá<br>
+                y se alimenta con el amor de papá.</p>
+
+            <p>Hola Familia y Amigos,<br>
+                quiero contarles que hace algunos meses<br>
+                vengo creciendo dentro de mi mamá<br>
+                y sé lo emocionados que están por mi llegada.</p>
+
+            <p>¿Seré una linda princesa?<br>
+                ¿Seré un bello príncipe?</p>
+
+            <p>Mis padres Lesly y Brayan<br>
+                te invitan a descubrir esta sorpresa juntos.</p>
+
+            <p>Te esperamos!</p>
+            <img src="img/torta-chocolate-600x722.png" class="responsive-image" width="150" height="auto">
+        </div>
+    </header>
+
+    <main>
+        <section class="reveal" data-aos="fade-up">
+            <h2 class="dress-code-text">FIESTA DE REVELACIÓN</h2>
+            <div id="countdown" class="countdown">
+                <div>
+                    <span id="days">00</span>
+                    <label>Días</label>
+                </div>
+                <div>
+                    <span id="hours">00</span>
+                    <label>Horas</label>
+                </div>
+                <div>
+                    <span id="minutes">00</span>
+                    <label>Minutos</label>
+                </div>
+            </div>
+            <p class="text">02 de marzo 2025 - 3:00 PM</p>
+            <p class="text"> Para mis papitos es muy importante que confirmes tu asistencia a mi fiesta. <br>
+                Por favor confirma antes del 25 de febrero.</p>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLScLXfDzW3tYtHhkFfE2MyT9UErob5rltMBdW9c-LT24Si6DFA/viewform?usp=dialog"
+                target="_blank" class="btn">¡Reserva tu lugar!</a>
+        </section>
+
+        <section class="location-section" data-aos="fade-right">
+            <img src="img/mapa.png" alt="Ícono de ubicación" style="width: 24px; height: 24px;">
+            <h3 class="dress-code-text">UBICACIÓN</h3>
+            <p class="text">DIRECCIÓN: ORTIGAL - Valle del Cauca</p>
+            <p class="text">Hora: 2:00 PM</p>
+            <a href="https://maps.app.goo.gl/26s5R1tT1sku7knA9" target="_blank" class="btn">¿Cómo llegar?</a>
+        </section>
+
+        <section class="padres" data-aos="fade-left">
+            <h3 class="dress-code-text">TE ESPERAMOS</h3>
+            <div class="image-container">
+                <div class="image-container">
+                    <img src="img/ECO.jpeg" alt="Primera Imagen" class="parent-image">
+
+                </div>
+            </div>
+        </section>
+
+        <section class="ropa" data-aos="fade-up">
+            <h3 class="dress-code-text">Dress Code</h3>
+            <img src="img/ropita-bebe-768x499.png" alt="Dress Code" class="responsive-image" width="150" height="auto">
+            <p class="dress-code-text">Se solicita cordialmente vestir una prenda blanca para la ocasión.</p>
+            <p class="dress-code-text">Si eres team niña, traer pañales.</p>
+            <p class="dress-code-text">Si eres team niño, traer pañitos húmedos.</p>
+            
+        </section>
+    </main>
+
+    <div class="floating bear-image">
+        <img src="img/oso-pequeno-2-768x1223.png" alt="Oso Flotante" class="responsive-image">
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        window.addEventListener('scroll', function () {
+            const bearImage = document.querySelector('.bear-image');
+            const movingImage = document.querySelector('.moving-image');
+            const scrollPosition = window.scrollY;
+
+            bearImage.style.transform = `translateY(${scrollPosition * 0.5}px)`;
+            movingImage.style.transform = `translateY(-50%) translateX(${scrollPosition * 0.5}px)`;
+        });
+
+        AOS.init();
+
+      
+        const eventDate = new Date(2025, 2, 2, 15, 0);
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = eventDate - now;
+
+            document.getElementById('days').textContent = Math.floor(distance / (1000 * 60 * 60 * 24));
+            document.getElementById('hours').textContent = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            document.getElementById('minutes').textContent = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+    </script>
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    html, body {
+        overflow-x: hidden;
+        width: 100%;
+    }
+
+    body {
+        margin: 0;
+        font-family: 'Roboto', sans-serif;
+        background-image: url('img/fondo.png');
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        min-height: 100vh;
+    }
+
+    .hero {
+        background: linear-gradient(to bottom, rgba(167, 164, 164, 0.8), rgba(255, 255, 255, 0.5));
+        padding: 50px 20px;
+        text-align: center;
+    }
+
+    .countdown {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        font-size: 2em;
+        margin: 20px 0;
+    }
+
+    .countdown div {
+        background-color: rgba(255, 255, 255, 0.9);
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        text-align: center;
+    }
+
+    .countdown span {
+        display: block;
+        font-size: 1.5em;
+        font-weight: bold;
+        color: #AB8760;
+    }
+
+    .countdown label {
+        font-size: 0.8em;
+        color: #AB8760;
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .reveal,
+    .location-section,
+    .padres,
+    .ropa {
+        text-align: center;
+        margin: 20px 0;
+        max-width: 800px;
+        width: 90%;
+        background-color: ropa(255, 255, 255, 0.8);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        opacity: 0.5;
+    }
+
+    .parent-image {
+        width: 100%;
+        height: auto;
+        max-width: 500px;
+        object-fit: cover;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn {
+        background-color: #AB8760;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1.2em;
+        transition: background-color 0.3s;
+        text-decoration: none;
+    }
+
+    .btn:hover {
+        background-color: #77604C;
+    }
+
+    .floating.bear-image {
+        position: fixed;
+        bottom: 50px;
+        right: 100px;
+        z-index: -1;
+    }
+
+    .floating img {
+        width: 250px;
+    }
+
+    .moving-image {
+        position: fixed;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+        z-index: -1;
+    }
+
+    .dress-code-text {
+        color: #BFAB9B;
+        font-family: "Dancing Script", Sans-serif;
+        font-weight: 500;
+        -webkit-text-stroke-width: 1px;
+        stroke-width: 1px;
+        -webkit-text-stroke-color: #77604C;
+        stroke: #77604C;
+    }
+
+    .text {
+        color: #77604C;
+        font-family: "Life Savers", Sans-serif;
+        font-size: 15px;
+        font-weight: 400;
+        -webkit-text-stroke-color: #AB8760;
+        stroke: #AB8760;
+    }
+
+    .responsive-image {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+
+    @media (max-width: 768px) {
+        .floating.bear-image {
+            right: 20px;
+            bottom: 20px;
+        }
+        
+        .floating img {
+            width: 120px;
+        }
+        
+        .moving-image {
+            left: -30px;
+        }
+        
+        .moving-image img {
+            width: 100px;
+        }
+        
+        .countdown {
+            gap: 10px;
+            font-size: 1.5em;
+        }
+        
+        .countdown div {
+            padding: 15px;
+        }
+        
+        .text {
+            font-size: 1.8rem;
+        }
+        
+        .dress-code-text {
+            font-size: 2.2rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .countdown {
+            flex-wrap: wrap;
+            gap: 8px;
+            font-size: 1.2em;
+        }
+        
+        .countdown div {
+            width: 45%;
+            margin: 5px;
+            padding: 10px;
+        }
+        
+        .text {
+            font-size: 1.6rem;
+            padding: 0 10px;
+        }
+        
+        .dress-code-text {
+            font-size: 1.8rem;
+            -webkit-text-stroke-width: 0.5px;
+        }
+        
+        .btn {
+            font-size: 1em;
+            padding: 8px 15px;
+        }
+    }
+
+    footer {
+        color: #AB8760;
+        text-align: center;
+        padding: 10px 0;
+        position: relative;
+        width: 100%;
+    }
+</style>
+    <footer>
+        <p>&copy; 2025 Saldana.07</p>
+    </footer>
+</body>
+
+</html>
