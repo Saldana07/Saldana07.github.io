@@ -289,75 +289,77 @@
         }
 
         @media (max-width: 768px) {
-            .floating.bear-image {
-                right: 20px;
-                bottom: 20px;
-            }
+    .floating.bear-image {
+        right: 20px;
+        bottom: 20px;
+    }
 
-            .floating img {
-                width: 120px;
-            }
+    .floating img {
+        width: 120px;
+    }
 
-            .moving-image {
-                left: -30px;
-            }
+    .moving-image {
+        left: -30px;
+    }
 
-            .moving-image img {
-                width: 100px;
-            }
+    .moving-image img {
+        width: 100px;
+    }
 
-            .countdown {
+    .countdown {
+        display: flex; /* Asegúrate de que sea un contenedor flex */
+        flex-direction: row; /* Alinea los elementos en fila */
+        gap: 10px; /* Espacio entre los elementos */
+        font-size: 1.5em; /* Tamaño de fuente */
+    }
 
-                display: flex;
-                /* Asegúrate de que sea un contenedor flex */
-                flex-direction: row;
-            }
+    .countdown div {
+        flex: 1; /* Hace que todos los divs ocupen el mismo espacio */
+        padding: 15px;
+        text-align: center; /* Centra el contenido dentro de los divs */
+        min-width: 80px; /* Establece un ancho mínimo si es necesario */
+    }
 
-            .countdown div {
-                padding: 15px;
-            }
+    .text {
+        font-size: 1.8rem;
+    }
 
-            .text {
-                font-size: 1.8rem;
-            }
+    .dress-code-text {
+        font-size: 2.2rem;
+    }
+}
 
-            .dress-code-text {
-                font-size: 2.2rem;
-            }
-        }
+@media (max-width: 480px) {
+    .countdown {
+        display: flex; /* Asegúrate de que sea un contenedor flex */
+        flex-direction: row; /* Alinea los elementos en fila */
+        gap: 8px; /* Espacio entre los elementos */
+        font-size: 1.2em; /* Tamaño de fuente */
+    }
 
-        @media (max-width: 480px) {
-            .countdown {
-                display: flex;
-                /* Asegúrate de que sea un contenedor flex */
-                flex-direction: row;
-                /* Alinea los elementos en fila */
-                gap: 8px;
-                font-size: 1.2em;
-            }
+    .countdown div {
+        flex: 1; /* Hace que todos los divs ocupen el mismo espacio */
+        margin: 5px;
+        padding: 10px;
+        text-align: center; /* Centra el contenido dentro de los divs */
+        min-width: 60px; /* Establece un ancho mínimo si es necesario */
+    }
 
-            .countdown div {
-                width: auto;
-                margin: 5px;
-                padding: 10px;
-            }
+    .text {
+        font-size: 1.6rem;
+        padding: 0 10px;
+    }
 
-            .text {
-                font-size: 1.6rem;
-                padding: 0 10px;
-            }
+    .dress-code-text {
+        font-size: 1.8rem;
+        -webkit-text-stroke-width: 0.5px;
+    }
 
-            .dress-code-text {
-                font-size: 1.8rem;
-                -webkit-text-stroke-width: 0.5px;
-            }
-
-            .btn {
-                font-size: 1em;
-                padding: 8px 15px;
-            }
-        }
-
+    .btn {
+        font-size: 1em;
+        padding: 8px 15px;
+    }
+}
         footer {
             color: #AB8760;
             text-align: center;
