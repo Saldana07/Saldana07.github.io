@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitación Baby Shower - Lesly y Brayan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+</head>
+
+<body>
+    <div class="moving-image">
+        <img src="img/avion.png" alt="Imagen en Movimiento" class="responsive-image" width="250" height="auto">
+    </div>
+
+    <header class="hero">
+        <h1 data-aos="fade-down" class="dress-code-text">¡TE INVITAMOS A MI BABY SHOWER!</h1>
+        <div class="dress-code-text">
+            <p>Estamos muy felices por la llegada de nuestra princesa,<br>
+                y queremos compartir contigo esta dulce espera.</p>
+
+            <p>Hola Familia y Amigos,<br>
+                dentro de poquito llegará nuestra bebé,<br>
+                y nos encantaría contar con tu compañía<br>
+                en esta hermosa celebración.</p>
+
+            <p>Mis papitos Lesly y Brayan<br>
+                te invitan con mucho amor a celebrar.</p>
+
+            <p>¡Te esperamos con los brazos abiertos!</p>
+            <img src="img/image-removebg-preview.png" class="responsive-image" width="250" height="auto">
+        </div>
+    </header>
+
+    <main>
+        <section class="reveal" data-aos="fade-up">
+            <h2 class="dress-code-text">BABY SHOWER</h2>
+            <div id="countdown" class="countdown">
+                <div>
+                    <span id="days">00</span>
+                    <label>Días</label>
+                </div>
+                <div>
+                    <span id="hours">00</span>
+                    <label>Horas</label>
+                </div>
+                <div>
+                    <span id="minutes">00</span>
+                    <label>Minutos</label>
+                </div>
+            </div>
+            <p class="text_hora">21 de junio 2025 - 3:00 PM</p>
+            <p class="text_letras">Para mis papitos es muy importante que confirmes tu asistencia.<br>
+                Por favor confirma antes del 10 de junio.</p>
+            <br>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLScLXfDzW3tYtHhkFfE2MyT9UErob5rltMBdW9c-LT24Si6DFA/viewform?usp=dialog"
+                target="_blank" class="btn">¡Confirmar asistencia!</a>
+        </section>
+
+        <section class="location-section" data-aos="fade-right">
+            <img src="img/mapa.png" alt="Ícono de ubicación" style="width: 24px; height: 24px;">
+            <h3 class="dress-code-text_ubi">UBICACIÓN</h3>
+            <p class="text_hora">Tarragona - Finca Don Gaviria</p>
+            <br>
+            <a href="https://maps.app.goo.gl/RD68CLrM9HJYg8Vx9?g_st=iw" target="_blank" class="btn">¿Cómo llegar?</a>
+        </section>
+
+        <section class="padres" data-aos="fade-left">
+            <h3 class="dress-code-text">¡NOS ILUSIONA VERTE ALLÍ!</h3>
+            <div class="image-container">
+                <img src="img/pareja1.png" alt="Ecografía" class="parent-image">
+            </div>
+        </section>
+
+        <section class="ropa" data-aos="fade-up">
+            <h3 class="dress-code-text">Dress Code</h3>
+            <img src="img/ropita-bebe-768x499.png" alt="Dress Code" class="responsive-image" width="250" height="auto">
+            <p class="dress-code-text">¡Luce una prenda rosada o blanca!</p>
+          
+        </section>
+    </main>
+
+    <div class="floating bear-image">
+        
+        <img src="img/osoglobo.png" alt="Oso Flotante" class="responsive-image" style="width: 400px;">
+
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        window.addEventListener('scroll', function () {
+            const bearImage = document.querySelector('.bear-image');
+            const movingImage = document.querySelector('.moving-image');
+            const scrollPosition = window.scrollY;
+
+            bearImage.style.transform = `translateY(${scrollPosition * 0.5}px)`;
+            movingImage.style.transform = `translateY(-50%) translateX(${scrollPosition * 0.5}px)`;
+        });
+
+        AOS.init();
+
+        const eventDate = new Date(2025, 5, 21, 15, 0);
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = eventDate - now;
+
+            document.getElementById('days').textContent = Math.floor(distance / (1000 * 60 * 60 * 24));
+            document.getElementById('hours').textContent = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            document.getElementById('minutes').textContent = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+    </script>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html, body {
+            overflow-x: hidden;
+            width: 100%;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-image: url('img/fondo.png');
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            min-height: 100vh;
+        }
+
+        .hero {
+            background: linear-gradient(to bottom, rgba(255, 192, 203, 0.8), rgba(255, 255, 255, 0.6));
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            font-size: 2em;
+            margin: 20px 0;
+        }
+
+        .countdown div {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .countdown span, .countdown label {
+            color: #77604C;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .reveal,
+        .location-section,
+        .padres,
+        .ropa {
+            text-align: center;
+            margin: 20px 0;
+            max-width: 800px;
+            width: 90%;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .parent-image {
+            width: 100%;
+            height: auto;
+            max-width: 500px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn {
+            background-color: #D77BA5;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2em;
+            transition: background-color 0.3s;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background-color: #B85C8E;
+        }
+
+        .floating.bear-image {
+            position: fixed;
+            bottom: 50px;
+            right: 100px;
+            z-index: -1;
+        }
+
+        .floating img {
+            width: 250px;
+        }
+
+        .moving-image {
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 0;
+            z-index: -1;
+        }
+
+        .dress-code-text, .dress-code-text_ubi {
+            color: #77604C;
+            font-family: "Dancing Script", cursive;
+            font-weight: 500;
+            -webkit-text-stroke: 1px #B85C8E;
+        }
+
+        .text, .text_hora, .text_letras {
+            color: #B85C8E;
+            font-family: "Life Savers", cursive;
+            font-size: 16px;
+        }
+
+        .responsive-image {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .floating.bear-image {
+                right: 20px;
+                bottom: 20px;
+            }
+
+            .floating img {
+                width: 120px;
+            }
+
+            .moving-image {
+                left: -30px;
+            }
+
+            .moving-image img {
+                width: 100px;
+            }
+
+            .countdown {
+                font-size: 1.5em;
+            }
+
+            .text {
+                font-size: 1.6rem;
+            }
+
+            .dress-code-text {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .countdown {
+                font-size: 1.2em;
+            }
+
+            .countdown div {
+                min-width: 60px;
+                padding: 10px;
+            }
+
+            .text {
+                font-size: 1.4rem;
+                padding: 0 10px;
+            }
+
+            .dress-code-text {
+                font-size: 1.6rem;
+                -webkit-text-stroke-width: 0.5px;
+            }
+
+            .btn {
+                font-size: 1em;
+                padding: 8px 15px;
+            }
+        }
+
+        footer {
+            color: #B85C8E;
+            text-align: center;
+            padding: 10px 0;
+        }
+    </style>
+
+    <footer>
+        <p>&copy; 2025 Baby Shower - Lesly y Brayan</p>
+    </footer>
+</body>
+
+</html>
