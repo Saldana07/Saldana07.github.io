@@ -9,14 +9,11 @@ body {
 }
 
 body {
-    margin: 0;
-    font-family: 'Roboto', sans-serif;
     background-image: url('img/fondo.png');
-    background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    min-height: 100vh;
+    background-attachment: scroll; /* por defecto */
 }
 
 .hero {
