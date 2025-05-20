@@ -8,14 +8,18 @@ body {
     width: 100%;
 }
 
-body {
-    margin: 0;
-    font-family: 'Roboto', sans-serif;
+html {
     background-image: url('img/fondo.png');
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background: transparent;
     min-height: 100vh;
 }
 
